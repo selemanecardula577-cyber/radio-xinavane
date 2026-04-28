@@ -1,0 +1,1815 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Rádio Comunitária de Xinavane 96.9fm</title>
+    <style>
+        :root {
+            --accent: #d92f2f;
+            --muted: #6b7280;
+            --bg: #f7f7fb;
+            --card: #ffffff;
+            font-family: Inter, system-ui, Arial;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, #fbfdff, var(--bg));
+            color: #111;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 28px;
+            background: linear-gradient(90deg, #0d2a3f, #1f3f5b);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 40;
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 200px;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 28px auto;
+            padding: 0 20px;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 22px;
+        }
+
+        @media(max-width:980px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card);
+            padding: 14px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+            margin-bottom: 16px;
+        }
+
+        h2.section-title {
+            margin: 0 0 12px;
+            font-size: 18px;
+        }
+
+        video,
+        audio {
+            margin-top: 10px;
+            border-radius: 10px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        video {
+            max-width: 800px;
+            aspect-ratio: 16/9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--muted);
+        }
+
+        aside input,
+        aside textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        .news-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .news-item img {
+            width: 110px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .meta {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 8px;
+            border-radius: 999px;
+            background: #eee;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 12px;
+        }
+
+        .hero {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .main-slide {
+            position: relative;
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .main-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .main-slide img.active {
+            opacity: 1;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 16px;
+        }
+
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 22px;
+        }
+
+        .tex-normal {
+            font: size 18px
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-icons a {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f1f1f1;
+            font-size: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
+            color: white;
+        }
+
+        .facebook:hover {
+            background: #1877f2;
+        }
+
+        .whatsapp:hover {
+            background: #25d366;
+        }
+
+        .instagram:hover {
+            background: #e4405f;
+        }
+
+        .youtube:hover {
+            background: #ff0000;
+        }
+
+        .programacao {
+            padding: 40px 20px;
+        }
+
+        .programacao-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .dia {
+            background: #f4f6fb;
+            padding: 20px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .dia:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .dia h3 {
+            margin-bottom: 15px;
+            color: #d92f2f;
+            font-size: 18px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .dia ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .dia li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .eventos {
+            padding: 40px 20px;
+        }
+
+        .eventos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .evento {
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .evento:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .evento img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .evento-info {
+            padding: 20px;
+        }
+
+        .evento-info .data {
+            font-size: 13px;
+            font-weight: bold;
+            color: #d92f2f;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .evento-info h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .evento-info p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            padding: 14px 25px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: 0.3s;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .pacotes-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        @media(max-width:900px) {
+            .pacotes-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:600px) {
+            .pacotes-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .radio-card {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 700;
+            color: #ff3b3b;
+            margin-bottom: 15px;
+        }
+
+        .live-indicator .dot {
+            width: 12px;
+            height: 12px;
+            background: #ff3b3b;
+            border-radius: 50%;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .radio-card h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .radio-text {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .wave-animation {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .wave-animation span {
+            width: 6px;
+            height: 30px;
+            background: #25D366;
+            animation: wave 1s infinite ease-in-out;
+        }
+
+        .wave-animation span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .wave-animation span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .wave-animation span:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes wave {
+
+            0%,
+            100% {
+                height: 20px;
+            }
+
+            50% {
+                height: 50px;
+            }
+        }
+
+        audio {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 50px;
+            margin: 20px 0;
+        }
+
+        .listeners {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        .radio-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 30px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .radio-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 5px 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background: #0d2a3f;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        @media(max-width:900px) {
+
+            nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .mobile-menu.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand">
+            <div class="logo">
+                <img src="IMG-20260304-WA0017.jpg" alt="Logo">
+            </div>
+            <div>
+                <h1 style="margin:0">Rádio Comunitária de Xinavane 96.9fm</h1>
+                <small>Informação que aproxima a comunidade</small>
+            </div>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="nav-btn" data-section="home">Home</button>
+            <button class="nav-btn" data-section="noticias">NOTÍCIAS</button>
+            <button class="nav-btn" data-section="entretenimento">Entretenimento</button>
+            <button class="nav-btn" data-section="desporto">Desporto</button>
+            <button class="nav-btn" data-section="programas">Programas</button>
+            <button class="nav-btn" data-section="jornalistas">Jornalistas</button>
+            <button class="nav-btn" data-section="radio">Rádio 96.9fm</button>
+            <button class="nav-btn" data-section="live">Live</button>
+            <button class="nav-btn" data-section="servicos">Serviços</button>
+            <button class="nav-btn" data-section="parceiros">Parceiros</button>
+            <button class="nav-btn" data-section="contactos">Contactos</button>
+            <button class="nav-btn" data-section="sobre">Sobre</button>
+        </div>
+
+        <nav>
+            <button class="nav-btn" data-section="home">Home</button>
+            <button class="nav-btn" data-section="noticias">NOTÍCIAS</button>
+            <button class="nav-btn" data-section="entretenimento">Entretenimento</button>
+            <button class="nav-btn" data-section="desporto">Desporto</button>
+            <button class="nav-btn" data-section="programas">Programas Gravados</button>
+            <button class="nav-btn" data-section="jornalistas">Perfil de Jornalistas</button>
+            <button class="nav-btn" data-section="radio">Rádio 96.9fm</button>
+            <button class="nav-btn" data-section="live">Transmissao Ao Vivo</button>
+            <button class="nav-btn" data-section="servicos">Serviços</button>
+            <button class="nav-btn" data-section="parceiros">Parceiros</button>
+            <button class="nav-btn" data-section="contactos">Contactos</button>
+            <button class="nav-btn" data-section="sobre">Sobre</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="layout">
+            <section id="content-area"></section>
+            <aside>
+                <input type="text" id="searchInput" placeholder="Pesquisar..."
+                    style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;">
+                <div id="searchResults" style="margin-top:10px;"></div>
+                <div class="card">
+                    <h3>Rádio ao vivo</h3>
+                    <audio controls>
+                        <source src="radio.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="card">
+                    <h3>⏰ Hora Actual</h3>
+                    <p id="clock" style="font-size:20px;font-weight:bold;"></p>
+                </div>
+                <div class="card">
+                    <h3>🌍 Estado do Tempo</h3>
+
+                    <select id="provinceSelect" style="width:100%;padding:8px;border-radius:8px;margin-bottom:10px;">
+                        <option value="-25.0,32.5">Maputo Cidade</option>
+                        <option value="-25.9,32.6">Maputo Província</option>
+                        <option value="-23.9,35.3">Inhambane</option>
+                        <option value="-19.8,34.8">Sofala (Beira)</option>
+                        <option value="-15.0,40.0">Nampula</option>
+                        <option value="-13.3,35.2">Zambézia</option>
+                        <option value="-17.9,36.9">Tete</option>
+                        <option value="-12.3,39.3">Cabo Delgado</option>
+                        <option value="-22.2,30.0">Gaza</option>
+                        <option value="-14.5,37.0">Niassa</option>
+                    </select>
+
+                    <p id="provinceWeather">Carregando clima...</p>
+                </div>
+                <div class="card">
+                    <h3>📰 Últimas Notícias</h3>
+                    <ul class="mini-news">
+                        <li>• Nova programação disponível</li>
+                        <li>• Evento confirmado</li>
+                        <li>• Entrevista especial hoje</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>📺 Live no YouTube</h3>
+                    <a href="#" class="btn-live">Assistir Agora</a>
+                </div>
+                <div class="card">
+
+                    <h3>👥 Ouvintes Online</h3>
+
+                    <p style="font-size:26px;font-weight:bold;color:#d92f2f;text-align:center;" id="onlineCount">
+                        0 Pessoas
+                    </p>
+
+                </div>
+                <div class="card" style="text-align:center;">
+
+                    <h3 style="margin-bottom:8px;">📢 Quer Anunciar?</h3>
+
+                    <p style="font-size:14px;color:#555;margin-bottom:15px;">
+                        Alcance milhares de pessoas através da nossa rádio e do nosso site.
+                        Divulgue a sua empresa, evento ou serviço connosco.
+                    </p>
+
+                    <div style="background:#f4f6fb;padding:12px;border-radius:10px;margin-bottom:15px;">
+                        📊 Visibilidade Local
+                        🚀 Alcance Comunitário
+                        💰 Preços Acessíveis
+                    </div>
+            </aside>
+        </div>
+
+        <footer>
+            © <span id="year"></span> Rádio Comunitária de Xinavane 96.9fm
+        </footer>
+    </main>
+
+    <script>
+        let sliderInterval;
+        const contents = {
+            home: `
+<div class="main-slide" id="hero-main-slide">
+
+<img src="1772102429647.jpg" class="active" data-title="" 
+data-desc="o presidente do ANAMOLA, visitou xinavane na tarde de ontem 25/02 "/>
+
+<img src="1772103025397.jpg" data-title="" 
+data-desc="o jovem de xinavane(Salomao Muchanga- presidente da nova Democracia),coloca autarquicas como piloto decisivo da seriedade do dialogo nacial inclusivo"/>
+
+<img src="1772103063228.jpg" data-title="" 
+data-desc="o partido nova democracia prepara o comite executivo nacional para os dias 27 e 28 de fevereiro de 2026"/>
+
+<img src="1772103114998.jpg" data-title="" 
+data-desc=" um camiao saiu da via e caiu para uma zona alagada no troco entre chissano e chibuto"/>
+
+<img src="1772103198636.jpg" data-title=caso da morte do pedro ferraz correia dos reis"" 
+data-desc="investigacao do caso da morte do administrador do BCI pode ganhar novos contornos"/>
+
+<img src="1772103242600.jpg" data-title="EN1 interrompida" 
+data-desc=" a estrada nacional numero 1 encontra-se interrompida no troco entre 3 de fevereiro-xinavane"/>
+
+<img src="download 2.jpg" data-title="" 
+data-desc="Notícias diretamente da comunidade."/>
+
+<img src="download 4.jpg" data-title="🎤 Entrevista Especial" 
+data-desc="Convidados especiais e líderes comunitários."/>
+
+<img src="download 5.jpg" data-title="🌍 Cultura e Tradição" 
+data-desc="Valorizando as nossas raízes."/>
+
+<img src="download.jpg" data-title="❤️ A Voz da Comunidade" 
+data-desc="Compromisso com a verdade e desenvolvimento."/>
+
+<div class="slide-overlay">
+<h2 id="slide-title"></h2>
+<p id="slide-desc"></p>
+</div>
+
+<div class="slide-arrow arrow-left">&#10094;</div>
+<div class="slide-arrow arrow-right">&#10095;</div>
+
+</div>
+
+<section class="programacao card">
+
+<h2 class="section-title">📅 Programação Semanal</h2>
+
+<div class="programacao-grid">
+
+<div class="dia">
+<h3>Segunda-feira</h3>
+<ul>
+<li>04:45 – Bom Dia Xinavane</li>
+<li>12:00 – Bom Apetite</li>
+<li>15:00 – Xinavane em Conexão</li>
+<li>17:00 – PI</li>
+<li>18:00 – A Voz do Consumidor</li>
+<li>20:00 – Desporto</li>
+<li>21:00 – Fecho da Emissão</li>
+</ul>
+</div>
+
+<div class="dia">
+<h3>Terça-feira</h3>
+<ul>
+<li>04:45 – Bom Dia Xinavane</li>
+<li>10:00 – Nita Hikule</li>
+<li>12:00 – Bom Apetite</li>
+<li>15:00 – Descoberta de Novos Talentos</li>
+<li>18:00 – Karingana wa Karingana</li>
+<li>20:00 – Nipfuneni Maxaka</li>
+<li>23:00 – Fecho da Emissão</li>
+</ul>
+</div>
+
+<div class="dia">
+<h3>Quarta-feira</h3>
+<ul>
+<li>04:45 – Bom Dia Xinavane</li>
+<li>10:00 – Reportagens Locais</li>
+<li>12:00 – Bom Apetite</li>
+<li>15:00 – Ases</li>
+<li>16:00 – Xinavane em Conexão</li>
+<li>17:00 – H2N</li>
+<li>18:00 – Xinavane em Foco</li>
+<li>20:00 – Ética em Foco</li>
+<li>23:00 – Fecho da Emissão</li>
+</ul>
+</div>
+
+<div class="dia">
+<h3>Quinta-feira</h3>
+<ul>
+<li>04:45 – Bom Dia Xinavane</li>
+<li>10:00 – Publicidades</li>
+<li>12:00 – Bom Apetite</li>
+<li>15:00 – Descoberta de Novos Talentos</li>
+<li>18:00 – A Hora da Juventude</li>
+<li>20:00 – Xihundla Xandjango</li>
+<li>23:00 – Fecho da Emissão</li>
+</ul>
+</div>
+
+<div class="dia">
+<h3>Sexta-feira</h3>
+<ul>
+<li>04:45 – Bom Dia Xinavane</li>
+<li>10:00 – Publicidades</li>
+<li>12:00 – Bom Apetite</li>
+<li>15:00 – Xinavane em Conexão</li>
+<li>17:00 – PI</li>
+<li>18:00 – Reggae</li>
+<li>22:00 – Fecho da Emissão</li>
+</ul>
+</div>
+
+<div class="dia">
+<h3>Sábado</h3>
+<ul>
+<li>04:45 – Bom Dia Xinavane</li>
+<li>10:00 – Programa da Criança</li>
+<li>12:00 – Juventude em Questão</li>
+<li>14:00 – Desporto</li>
+<li>17:00 – Relacionamento a Dois</li>
+<li>20:00 – Gestão e Poupança</li>
+<li>21:00 – Promoção da Música Local</li>
+<li>23:00 – Fecho da Emissão</li>
+</ul>
+</div>
+
+<div class="dia">
+<h3>Domingo</h3>
+<ul>
+<li>04:45 – Encontro Espiritual</li>
+<li>09:00 – Programa da Criança</li>
+<li>11:00 – Igreja Universal</li>
+<li>12:00 – Mensagem da Última Hora</li>
+<li>13:00 – Igreja Adventista</li>
+<li>14:00 – Desporto</li>
+<li>18:00 – Vibração Correia</li>
+<li>20:00 – Fala Coração</li>
+<li>23:00 – Fecho da Emissão</li>
+</ul>
+</div>
+
+</div>
+<div class="card publicidade">
+
+<h2 class="section-title">📢 Publicidade</h2>
+
+<div style="margin-bottom:20px;">
+<video controls style="width:80%;height:250px;object-fit:cover;border-radius:16px;">
+<source src="anuncio1.mp4" type="video/mp4">
+</video>
+<p style="margin-top:8px;font-weight:600;">Descrição do Anúncio 1</p>
+</div>
+
+<div style="margin-bottom:20px;">
+<video controls style="width:80%;max-height:250px;object-fit:cover;border-radius:16px;">
+<source src="anuncio2.mp4" type="video/mp4">
+</video>
+<p style="margin-top:8px;font-weight:600;">Descrição do Anúncio 2</p>
+</div>
+
+
+
+
+</div>
+
+</section>
+</section>
+
+`,
+
+            noticias: `<div class="card">
+<h2 class="section-title"> Notícias</h2>
+
+<div class="news-container">
+
+  <div style="flex:1;min-width:250px;">
+
+<p>Caso de manifestacoes em Xinavane</p>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="caso_de_manifestacoes_2024_em_xinavane(360p).mp4" type="video/mp4">
+</video>
+</div>
+
+<div style="flex:1;min-width:250px;">
+<p>Banco de Moçambique prevê um crescimento económico modesto para 2025</p>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="Banco de Moçambique prevê um crescimento económico modesto para 2025 @PortalFM24.mp4" type="video/mp4">
+</video>
+</div>
+
+<div style="flex:1;min-width:250px;">
+<p>CICLONE_GEZANI_DEIXA_PELO_MENOS_TRÊS_MORTOS_EM_MOÇAMBIQUE</p>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="CICLONE_GEZANI_DEIXA_PELO_MENOS_TRÊS_MORTOS_EM_MOÇAMBIQUE(1080p).mp4" type="video/mp4">
+</video>
+</div>
+
+<div style="flex:1;min-width:250px;">
+<p>Trump volta a dizer que EUA vão iniciar ataques na Venezuela</p>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="Trump volta a dizer que EUA vão iniciar ataques na Venezuela _ Jornal da Band.mp4" type="video/mp4">
+</video>
+</div>
+
+<div style="flex:1;min-width:250px;">
+<p><div style="flex:1;min-width:250px;">
+<p>manifestacoes_em_xinavane</p>
+</div></p>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="manifestacoes_em_xinavane(1080p).mp4" type="video/mp4">
+</video>
+
+
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video6.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 6</h3>
+<p>Descrição da notícia 6...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video7.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 7</h3>
+<p>Descrição da notícia 7...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video8.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 8</h3>
+<p>Descrição da notícia 8...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video9.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 9</h3>
+<p>Descrição da notícia 9...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video10.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 10</h3>
+<p>Descrição da notícia 10...</p>
+</div>
+</div>
+
+</div>
+</div>`,
+
+            entretenimento: `<div class="card">
+<h2 class="section-title"> entretenimento</h2>
+
+<div class="news-container">
+
+  <div style="flex:1;min-width:250px;">
+<p>No ambito do mes do Amor, a nossa equipe saiu para as ruas da Vila de Xinavane para
+  fazer uma brincadeira de teste de fidelidade, podendo assim ver se em xinavane ainda existe Amor</p>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="Video.Guru_20260302_130405198.mp4" type="video/mp4">
+</video>
+
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video2.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 2</h3>
+<p>Descrição da notícia 2...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video3.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 3</h3>
+<p>Descrição da notícia 3...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video4.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 4</h3>
+<p>Descrição da notícia 4...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video5.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 5</h3>
+<p>Descrição da notícia 5...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video6.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 6</h3>
+<p>Descrição da notícia 6...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video7.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 7</h3>
+<p>Descrição da notícia 7...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video8.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 8</h3>
+<p>Descrição da notícia 8...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video9.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 9</h3>
+<p>Descrição da notícia 9...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video10.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 10</h3>
+<p>Descrição da notícia 10...</p>
+</div>
+</div>
+
+</div>
+</div>`,
+
+            desporto: `<div class="card">
+<h2 class="section-title"> desporto</h2>
+
+<div class="news-container">
+<div style="flex:1;min-width:250px;">
+<h3>campionato nacional</h3>
+<p>mocambola2025-2 jornada-Baia de pemba 2-1 Black Bulls.
+  o baia levou a melhor diante da toda poderosa Black Bulls</p>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="MOÇAMBOLA 2025 -  2ª JORNADA_ BAÍA DE PEMBA 2-1 BLACK BULLS.mp4" type="video/mp4">
+</video>
+</div>
+
+<div style="flex:1;min-width:250px;">
+<h3>qualificacao para o can 2025</h3>
+<p>MOÇAMBIQUE_VS_GUINE_BISSAU_[2X1]_QUALIFICAÇÃO_CAN_2025
+  os mambas ganharam a sua congera Guine-bissau por duas bolas a uma, 
+  num jogo muito desequilibrada a equipa trenada por chiquinho conde levou a melhor, garantindo
+   assim uma vaga no maior show do fotebol Africano</p>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="MOÇAMBIQUE_VS_GUINE_BISSAU_[2X1]_QUALIFICAÇÃO_CAN_2025(720p).mp4" type="video/mp4">
+</video>
+</div>
+
+<div style="flex:1;min-width:250px;">
+<h3>campionato nacional</h3>
+<p>MOÇAMBOLA_2025__FER_MAPUTO_1_1_FER_LICHINGA
+  num jogo mais aguardado do campionato o gigante nacinal o ferroviario de Maputo acabou 
+  por dividir os pontos com a sua congera de lichinga, depois te terem empatado por uma bola</p>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="MOÇAMBOLA_2025__FER_MAPUTO_1_1_FER_LICHINGA(360p).mp4" type="video/mp4">
+</video>
+</div>
+
+<div style="flex:1;min-width:250px;">
+<h3>copa del rey espanha</h3>
+<p>FC_BARCELONA_3_vs_0_ATLETICO_MADRID___COPA_DEL_REY_
+  num jogo muito intenso pra ambas equipas, quem se saiu bem foi o time do hansi flinck
+  ganhando assim o Atletico por 3:0, mas mesmo com a vitoria concebida o barcelona nao se qualificou
+  pra a final da copa del rey porque ja tinha perdido por 4:0 na primeira mao.</p>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="HIGHLIGHTS___FC_BARCELONA_3_vs_0_ATLETICO_MADRID___COPA_DEL_REY_25_26(720p).mp4" type="video/mp4">
+</video>
+</div>
+
+<div style="flex:1;min-width:250px;">
+<h3>Campionato Nacional</h3>
+<p>MOÇAMBOLA_2025_-_19ª_JORNADA__DESPORTIVO_DA_MATOLA_0-4_UNIÃO_DO_SONGO
+  a UDS fez mais uma vitima no compionato goleando assim o Desportivo Da Matola</p>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="RESUMO_MOÇAMBOLA_2025_-_19ª_JORNADA__DESPORTIVO_DA_MATOLA_0-4_UNIÃO_DO_SONGO(720p).mp4" type="video/mp4">
+</video>
+</div>
+
+<div style="flex:1;min-width:250px;">
+<h3>Campionato Nacional</h3>
+<p>UDS_4_-_0_ABB__11ª_JORNADA
+  Num el classico do fotebol Mocambicano a ABB trombou diante do UDS</p>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="UDS_4_-_0_ABB__11ª_JORNADA(720p).mp4" type="video/mp4">
+</video>
+</div>
+
+<div style="flex:1;min-width:250px;">
+<h3>Taca de portugal</h3>
+<p>Sporting_1-0_FC_Porto__Taça_de_Portugal
+  </p>
+</div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="Resumo__Sporting_1-0_FC_Porto__Taça_de_Portugal_25_26_(720p).mp4" type="video/mp4">
+</video>
+
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video8.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 8</h3>
+<p>Descrição da notícia 8...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video9.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 9</h3>
+<p>Descrição da notícia 9...</p>
+</div>
+</div>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:30px;">
+<video controls style="width:350px;height:200px;border-radius:12px;object-fit:cover;">
+<source src="video10.mp4" type="video/mp4">
+</video>
+<div style="flex:1;min-width:250px;">
+<h3>Título da Notícia 10</h3>
+<p>Descrição da notícia 10...</p>
+</div>
+</div>
+
+</div>
+</div>`,
+            programas: `
+<div class="card">
+<h2 class="section-title">🎙 Programas Gravados</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
+
+
+<div style="background:#f4f6fb;padding:18px;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+<h3>📻 Programa Matinal</h3>
+<p style="font-size:14px;color:var(--muted);">
+Notícias, entrevistas e informação da comunidade.
+</p>
+<audio controls style="width:100%;margin-top:10px;">
+<source src="videoplayback.mp4" type="audio/mpeg">
+</audio>
+</div>
+
+<div style="background:#f4f6fb;padding:18px;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+<h3>🎤 Debate Comunitário</h3>
+<p style="font-size:14px;color:var(--muted);">
+Discussão sobre problemas e soluções locais.
+</p>
+<audio controls style="width:100%;margin-top:10px;">
+<source src="programa2.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+</div>
+</div>
+`,
+            jornalistas: `<div class="card">
+<h2 class="section-title">Perfil de Jornalistas</h2>
+<div class="jornalistas-container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;">
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="IMG-20260218-WA0011.jpg" alt="Izau Correia " style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>Izau Correia</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">Repórter</div>
+<p style="font-size:14px;">Sua fonte diaria de noticias confiaveis.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="motion_photo_4107244669132673257.jpg" alt="Jornalista 2" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>Selemane Cardula</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">Apresentador</div>
+<p style="font-size:14px;">viva o momento. sinta o entretinimento</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="motion_photo_7974330379540066364.jpg" alt="Jornalista 2" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>Roque Larson</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">lucutor e reporter</div>
+<p style="font-size:14px;">Avoz dos que nao tem voz.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="motion_photo_3797002765234427292.jpg" alt="Jornalista 2" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3> Daniel Moreno</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">mobilizador e jornalista</div>
+<p style="font-size:14px;">Mini biografia do jornalista 2.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="motion_photo_2434197291776075631.jpg" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>Crimilda Dayana</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">  Locutora e Repórter</div>
+<p style="font-size:14px;">Mini biografia do jornalista 1.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="IMG-20260218-WA0013.jpg" alt="Jornalista 2" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>Narciso Timbe</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">lucutor e reporter</div>
+<p style="font-size:14px;">Mini biografia do jornalista 2.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="motion_photo_2718616709163965077.jpg" alt="Jornalista 2" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>Fatima pedro</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">Reporter</div>
+<p style="font-size:14px;">Mini biografia do jornalista 2.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="IMG-20260218-WA0024.jpg" alt="Jornalista 2" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>Alberto Chirindza</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">locutor e reporter</div>
+<p style="font-size:14px;">Mini biografia do jornalista 2.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="IMG-20260218-WA0015.jpg" alt="Jornalista 1" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>Mapel Josine</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">Repórter</div>
+<p style="font-size:14px;">Mini biografia do jornalista 1.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="motion_photo_6690344961337947689.jpg" alt="Jornalista 2" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>Abu suale</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">Locutor</div>
+<p style="font-size:14px;">Mini biografia do jornalista 2.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="motion_photo_614301931971637882.jpg" alt="Jornalista 2" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>zinaida</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">Apresentadora</div>
+<p style="font-size:14px;">Mini biografia do jornalista 2.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="img/jornalistas/jornalista2.jpg" alt="Jornalista 2" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>Jornalista 2</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">Apresentador</div>
+<p style="font-size:14px;">Mini biografia do jornalista 2.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="" alt="Jornalista 1" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>Jornalista 1</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">Repórter</div>
+<p style="font-size:14px;">Mini biografia do jornalista 1.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="m" alt="Jornalista 2" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3></h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">Apresentadora</div>
+<p style="font-size:14px;">Mini biografia do jornalista 2.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="img/jornalistas/jornalista2.jpg" alt="Jornalista 2" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>Jornalista 2</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">Apresentador</div>
+<p style="font-size:14px;">Mini biografia do jornalista 2.</p>
+</div>
+<div class="jornalista-card" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;">
+<img src="img/jornalistas/jornalista2.jpg" alt="Jornalista 2" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
+<h3>Jornalista 2</h3><div class="cargo" style="font-size:13px;color:#6b7280;margin-bottom:8px;">Apresentador</div>
+<p style="font-size:14px;">Mini biografia do jornalista 2.</p>
+</div>
+</div>
+</div>
+`,
+            radio: `
+<section id="radio-section" class="radio-card">
+
+<div class="live-indicator">
+<span class="dot"></span>
+AO VIVO
+</div>
+
+<h2>🎙 Rádio Comunitária Ao Vivo</h2>
+
+<p class="radio-text">
+Acompanhe a transmissão em tempo real e participe enviando mensagens.
+</p>
+
+<div class="wave-animation">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<audio controls>
+<source src="videoplayback.mp4" type="audio/mpeg">
+Seu navegador não suporta áudio.
+</audio>
+
+<div class="listeners">
+👥 Ouvintes Online:
+<span id="radioListeners">0</span>
+</div>
+
+<a href="https://wa.me/258858694658?text=Estou%20a%20ouvir%20a%20rádio%20ao%20vivo."
+target="_blank" class="radio-btn">
+📩 Enviar Mensagem
+</a>
+
+</section>
+`,
+
+            live: `
+<div class="card">
+<h2 class="section-title">🔴 Rádio Ao Vivo</h2>
+
+<p style="color:var(--muted);margin-bottom:15px;">
+Assista a transmissão ao vivo da rádio diretamente aqui.
+</p>
+
+<iframe 
+width="100%" 
+height="350"
+style="border-radius:14px;"
+src="https://www.youtube.com/embed/ID_DO_TEU_LIVE"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+</div>
+`,
+            servicos:
+                `,
+<div class="card">
+
+<h2 class="section-title">🛠 Nossos Pacotes de Serviços</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:15px;">
+
+
+<div style="background:#f4f6fb;padding:20px;border-radius:16px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+<h3>🥉 Básico</h3>
+<p style="font-size:22px;font-weight:bold;color:#d92f2f;">MZN 2.000</p>
+<p style="font-size:14px;color:#555;">
+✔ Publicidade na Rádio<br>
+✔ 1 Vídeo no Site<br>
+✔ Divulgação 7 Dias
+</p>
+<a href="https://wa.me/+258 858694658?text=Olá,%20quero%20solicitar%20o%20Pacote%20Bronze."
+target="_blank" class="btn-whatsapp">
+📩 Solicitar Agora
+</a>
+</div>
+
+
+<div style="background:#fff;padding:20px;border-radius:16px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.08);border:2px solid #d92f2f;">
+<h3>🥈 Premium</h3>
+<p style="font-size:22px;font-weight:bold;color:#d92f2f;">MZN 5.000</p>
+<p style="font-size:14px;color:#555;">
+✔ Publicidade Destaque<br>
+✔ 3 Vídeos no Site<br>
+✔ Redes Sociais<br>
+✔ Divulgação 30 Dias
+</p>
+<a href="https://wa.me/+258 858694658?text=Olá,%20quero%20solicitar%20o%20Pacote%20Prata%20de%20Publicidade."
+target="_blank" class="btn-whatsapp prata">
+📩 Solicitar Prata
+</a>
+</div>
+
+<div style="background:#0d2a3f;color:white;padding:20px;border-radius:16px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.1);">
+<h3>🥇 VIP</h3>
+<p style="font-size:22px;font-weight:bold;">MZN 10.000</p>
+<p style="font-size:14px;">
+✔ Publicidade Máxima<br>
+✔ Vídeos Ilimitados<br>
+✔ Destaque no Home<br>
+✔ Divulgação 90 Dias
+</p>
+<a href="https://wa.me/258858694658?text=Olá,%20quero%20solicitar%20o%20Pacote%20Ouro%20de%20Publicidade."
+target="_blank" class="btn-whatsapp ouro">
+📩 Solicitar Ouro
+</a>
+</div>
+
+</div>
+
+</div>
+`,
+            parceiros: `<div class="card"><h2 class="section-title">Nossos Parceiros</h2>
+<div class="news-list" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
+<div style="flex:1 1 220px;text-align:center;padding:10px;"><img src="download (1).jpg" style="width:120px;border-radius:8px;margin-bottom:6px;">
+<div style="font-weight:700;color:var(--accent)">ASES</div>
+<div style="font-size:13px;color:var(--muted)">Organização que promove o desenvolvimento agrícola e social em comunidades rurais.</div></div>
+<div style="flex:1 1 220px;text-align:center;padding:10px;"><img src="download.jpg" style="width:120px;border-radius:8px;margin-bottom:6px;">
+<div style="font-weight:700;color:var(--accent)">H2N</div>
+<div style="font-size:13px;color:var(--muted)">ONG moçambicana focada em comunicação comunitária e fortalecimento de comunidades.</div></div>
+<div style="flex:1 1 220px;text-align:center;padding:10px;"><img src="images (2).jpg" style="width:120px;border-radius:8px;margin-bottom:6px;">
+<div style="font-weight:700;color:var(--accent)">Açucareira de Xinavane</div>
+<div style="font-size:13px;color:var(--muted)">Empresa de produção de açúcar com impacto social e econômico na região.</div></div>
+</div></div>`,
+            contactos: `
+<div class="card">
+<h2 class="section-title">📞 Contactos</h2>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:25px;flex-wrap:wrap;">
+
+<div style="min-width:260px;">
+
+<h3 style="margin-top:0;">Fale Connosco</h3>
+
+<p style="color:var(--muted);margin-bottom:20px;">
+Tem alguma informação, sugestão ou deseja anunciar na rádio?
+Envie-nos uma mensagem e responderemos o mais rápido possível.
+</p>
+
+<div style="margin-bottom:15px;">
+<strong>📍 Localização:</strong><br>
+Xinavane – Moçambique
+</div>
+
+<div style="margin-bottom:15px;">
+<strong>📞 Telefone / WhatsApp:</strong><br>
++258 858694658
+</div>
+
+<div>
+<strong>✉ Email:</strong><br>
+aceleradorj@gmail.com
+</div>
+<h3 style="margin-top:30px;">Siga-nos nas Redes Sociais</h3>
+
+<div class="social-icons">
+
+<a href="https://www.facebook.com/61577775028490" 
+target="_blank" 
+rel="noopener noreferrer" 
+class="facebook">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://wa.me/258858694658" 
+target="_blank" 
+rel="noopener noreferrer" 
+class="whatsapp">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="https://instagram.com/SEU_LINK_AQUI" 
+target="_blank" 
+rel="noopener noreferrer" 
+class="instagram">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://youtube.com/@user-cu6ym7qy3x?si=TAGVoFLlc-6ISPkO" 
+target="_blank" 
+rel="noopener noreferrer" 
+class="youtube">
+<i class="fab fa-youtube"></i>
+</a>
+
+</div>
+</div>
+<form action="https://formspree.io/f/SEU_CODIGO_AQUI" method="POST">
+
+<input type="text" name="nome" placeholder="Seu Nome" required
+style="width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;margin-bottom:15px;">
+
+<input type="email" name="email" placeholder="Seu Email" required
+style="width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;margin-bottom:15px;">
+
+<textarea name="mensagem" placeholder="Escreva sua mensagem..." rows="5" required
+style="width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;margin-bottom:15px;"></textarea>
+
+<button type="submit"
+style="width:100%;padding:12px;background:var(--accent);color:white;border:0;border-radius:8px;font-weight:600;cursor:pointer;">
+Enviar Mensagem
+</button>
+
+</form>
+
+</div>
+</div>
+`,
+            sobre: `
+<div class="card">
+<h2 class="section-title">📡 Sobre a Rádio Comunitária de Xinavane</h2>
+
+<div style="line-height:1.8;font-size:16px;color:#333;">
+
+<p>
+A <strong>Rádio Comunitária de Xinavane</strong> é um meio de comunicação independente,
+criado para informar, educar e aproximar a comunidade através de conteúdos relevantes e verdadeiros.
+</p>
+
+<p>
+O nosso compromisso é dar voz às comunidades locais, promover debates construtivos,
+divulgar notícias em tempo real e apoiar o desenvolvimento social, cultural e económico da região.
+</p>
+
+<p>
+Trabalhamos com uma equipa de jornalistas, locutores e colaboradores dedicados,
+que acreditam no poder da comunicação para transformar vidas.
+</p>
+
+<p>
+🎙 Transmitimos informação  
+🎶 Promovemos cultura  
+⚽ Divulgamos desporto  
+💬 Incentivamos o diálogo comunitário  
+</p>
+
+<p style="margin-top:15px;font-weight:600;color:var(--accent);">
+📢 Somos a Voz da Comunidade — Informação que Aproxima!
+</p>
+
+</div>
+
+sobre:
+
+<div class="card">
+<h2 class="section-title">📡 Sobre a Rádio Comunitária de Xinavane</h2>
+
+<div style="line-height:1.8;font-size:16px;color:#333;">
+
+<p>
+A <strong>Rádio Comunitária de Xinavane</strong> é um meio de comunicação dedicado a informar, educar e aproximar a comunidade através de conteúdos relevantes e verdadeiros.
+</p>
+
+<p>
+O nosso compromisso é promover informação confiável, debates construtivos e apoiar o desenvolvimento social, cultural e económico da região.
+</p>
+
+<p>
+Trabalhamos com uma equipa de jornalistas, locutores e colaboradores comprometidos com a transparência e com a voz da comunidade.
+</p>
+
+<p>
+🎙 Informação de qualidade<br>
+🎶 Promoção da cultura<br>
+⚽ Divulgação do desporto<br>
+💬 Participação comunitária
+</p>
+
+<p style="margin-top:15px;font-weight:600;color:var(--accent);">
+📢 Somos a Voz da Comunidade — Informação que Aproxima!
+</p>
+
+</div>
+`,
+
+
+
+        };
+        function iniciarSlider() {
+
+            const slides = document.querySelectorAll('#hero-main-slide img');
+            const title = document.getElementById('slide-title');
+            const desc = document.getElementById('slide-desc');
+
+            if (!slides.length) return;
+
+            let current = 0;
+
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+
+                slides[index].classList.add('active');
+
+                if (title && desc) {
+                    title.textContent = slides[index].dataset.title || "";
+                    desc.textContent = slides[index].dataset.desc || "";
+                }
+            }
+
+            showSlide(current);
+
+            const left = document.querySelector('.arrow-left');
+            const right = document.querySelector('.arrow-right');
+
+            if (left) {
+                left.onclick = () => {
+                    current = (current - 1 + slides.length) % slides.length;
+                    showSlide(current);
+                };
+            }
+
+            if (right) {
+                right.onclick = () => {
+                    current = (current + 1) % slides.length;
+                    showSlide(current);
+                };
+            }
+
+            if (sliderInterval) clearInterval(sliderInterval);
+
+            // 🔥 10 SEGUNDOS
+            sliderInterval = setInterval(() => {
+                current = (current + 1) % slides.length;
+                showSlide(current);
+            }, 10000);
+        }
+        const contentArea = document.getElementById('content-area');
+
+        function loadSection(section) {
+            contentArea.innerHTML = contents[section];
+            if (section === "home") iniciarSlider();
+        }
+
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                loadSection(btn.dataset.section);
+            });
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        loadSection('home');
+
+        setInterval(() => {
+            document.getElementById("clock").textContent = new Date().toLocaleTimeString();
+        }, 1000);
+
+        async function carregarClimaProvincia(coords) {
+            const [lat, lon] = coords.split(",");
+
+            try {
+                const response = await fetch(
+                    `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`
+                );
+
+                const data = await response.json();
+                const temp = data.current_weather.temperature;
+                const vento = data.current_weather.windspeed;
+
+                document.getElementById("provinceWeather").innerHTML =
+                    "🌡 Temperatura: " + temp + "°C<br>" +
+                    "💨 Vento: " + vento + " km/h";
+            }
+            catch (error) {
+                document.getElementById("provinceWeather").innerHTML =
+                    "Erro ao carregar clima.";
+            }
+        }
+
+        document.getElementById("provinceSelect").addEventListener("change", function () {
+            carregarClimaProvincia(this.value);
+        });
+
+        carregarClimaProvincia(document.getElementById("provinceSelect").value);
+
+
+        if (!localStorage.getItem("radioVisitors")) {
+            localStorage.setItem("radioVisitors", Math.floor(Math.random() * 100) + 50);
+        }
+
+        let baseVisitors = parseInt(localStorage.getItem("radioVisitors"));
+
+        function atualizarContador() {
+
+            let variacao = Math.floor(Math.random() * 10 - 5);
+            baseVisitors += variacao;
+
+            if (baseVisitors < 20) {
+                baseVisitors = 20;
+            }
+
+            localStorage.setItem("radioVisitors", baseVisitors);
+
+            document.getElementById("onlineCount").innerText = baseVisitors + " Pessoas";
+        }
+
+        setInterval(atualizarContador, 10000);
+
+        atualizarContador();
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const input = document.getElementById("searchInput");
+
+            if (!input) return;
+
+            input.addEventListener("keyup", function () {
+
+                let valor = this.value.toLowerCase();
+
+                let elementos = document.querySelectorAll(".card");
+
+                elementos.forEach(el => {
+
+                    if (el.innerText.toLowerCase().includes(valor)) {
+                        el.style.display = "block";
+                    } else {
+                        el.style.display = "none";
+                    }
+
+                });
+
+            });
+
+        });
+
+        function enviarPedido(pacote, preco) {
+
+            let telefone = "258858694658";
+
+            let mensagem = `Olá, quero solicitar o pacote ${pacote}.
+Preço: MZN ${preco}.
+Estou interessado nos serviços.`;
+
+            let url = "https://wa.me/" + telefone + "?text=" + encodeURIComponent(mensagem);
+
+            window.open(url, "_blank");
+
+        }
+        function enviarMensagem(event) {
+            event.preventDefault();
+
+            let nome = document.getElementById("nome").value;
+            let email = document.getElementById("email").value;
+            let mensagem = document.getElementById("mensagem").value;
+
+            if (nome === "" || email === "" || mensagem === "") {
+                alert("Por favor preencha todos os campos.");
+                return;
+            }
+
+            alert("Mensagem enviada com sucesso!");
+
+            document.getElementById("nome").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("mensagem").value = "";
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("active");
+        }
+
+        document.querySelectorAll("#mobileMenu .nav-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                document.getElementById("mobileMenu").classList.remove("active");
+                loadSection(btn.dataset.section);
+            });
+        });
+
+        const searchInput = document.getElementById("searchInput");
+        const searchResults = document.getElementById("searchResults");
+
+        searchInput.addEventListener("keyup", function () {
+
+            let query = searchInput.value.toLowerCase();
+
+            if (query.length < 2) {
+                searchResults.innerHTML = "";
+                return;
+            }
+
+            let elementos = document.querySelectorAll("#content-area p, #content-area h3, #content-area li");
+
+            let resultados = "";
+
+            elementos.forEach(el => {
+
+                let texto = el.textContent.toLowerCase();
+
+                if (texto.includes(query)) {
+
+                    resultados += `
+<div style="padding:8px;border-bottom:1px solid #eee;">
+${el.textContent.replace(new RegExp(query, "gi"), "<mark>" + query + "</mark>")}
+</div>
+`;
+
+                }
+
+            });
+
+            if (resultados === "") {
+                searchResults.innerHTML = "<p>Nenhum resultado encontrado</p>";
+            } else {
+                searchResults.innerHTML = resultados;
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
